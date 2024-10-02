@@ -1,7 +1,12 @@
+import Header from './components/Header'
+import Configuration from './components/Configuration'
 function App() {
   return (
     <div className="container">
-      <div className="bg d-flex pb-5"></div>
+      <div className="bg row d-flex pb-5">
+        <Header/>
+        <Configuration/>
+      </div>
     </div>
   );
 }
