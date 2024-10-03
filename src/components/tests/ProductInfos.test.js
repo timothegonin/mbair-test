@@ -20,5 +20,13 @@ describe('Product infos', () => {
     expect(helperTitle).toBeInTheDocument()
     expect(specsList).toBeInTheDocument()
     expect(specsListItems.length).toBe(7)
+    const featuresListText = specsListItems.map((item) => item.textContent)
+    expect(featuresListText).toEqual(["Puce Apple M1 avec CPU 8 coeurs, Neutral Engine 16 coeurs",
+      "8 Go de mémoire unifiée",
+      "SSD de 256 Go",
+      "Ecran Retina 15 pouces avec True Tone",
+      "Deux ports Thunderbolt/USB 4",
+      "Adaptateur USB-C 30 W",
+      "Magic Keuboard rétroéclairé avec Touch ID - Français"]) 
   });
 })
