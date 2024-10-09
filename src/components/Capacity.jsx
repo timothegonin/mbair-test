@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import CapacityWrapper from './CapacityWrapper'
+import axios from 'axios'
 
 const Capacity = ({capacityType}) => {
 
@@ -7,10 +8,9 @@ const Capacity = ({capacityType}) => {
   console.log(items)
 
   useEffect(() => {
-    fetch(`http://localhost:3030/${capacityType}`)
-    .then((res) => {return res.json()})
-    .then((data) => {setItems(data)})
-    .catch((error) => console.log(error))
+    axios.get(`http://localhost:3030/${capacityType}`)
+    .then(res => setItems(res.data))
+    .catch(err => console.log(err))
   }, [capacityType])
   
 
