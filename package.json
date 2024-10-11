@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "eslint-plugin-jest-dom": "^5.4.0",
-    "eslint-plugin-testing-library": "^6.3.0"
+    "eslint-plugin-testing-library": "^6.3.0",
+    "msw": "^2.4.10"
   }
 }
