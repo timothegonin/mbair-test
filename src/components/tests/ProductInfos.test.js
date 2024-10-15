@@ -1,9 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import ProductInfos from '../ProductInfos';
+import MacBookProviders from '../../providers/MacBookProviders';
 
 describe('Product infos', () => {
   test('sould render the image, title, price and specs', () => {
-    render(<ProductInfos />);
+    render(<ProductInfos />, {wrapper: MacBookProviders});
     //PRESENTATION
     const productImage = screen.getByRole('img', {name: /macbookair/i});
     const productTitle = screen.getByRole('heading', {name:/macbook air - gris sidéral/i, level:5});
