@@ -1,11 +1,14 @@
 import Header from './components/Header'
 import Configuration from './components/Configuration'
+import MacBookProviders from './providers/MacBookProviders';
 function App() {
   return (
     <div className="container">
       <div className="bg row d-flex pb-5">
         <Header/>
-        <Configuration/>
+        <MacBookProviders>
+          <Configuration/>
+        </MacBookProviders>
       </div>
     </div>
   );
