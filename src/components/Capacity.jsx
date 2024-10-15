@@ -3,11 +3,13 @@ import CapacityWrapper from './CapacityWrapper'
 import RamCapacities from './RamCapacities'
 import axios from 'axios'
 import SsdCapacities from './SsdCapacities'
+import AlertNotification from './AlertNotification'
 
 const Capacity = ({capacityType}) => {
 
   const [items, setItems] = useState([])
   const [ssd, setSsd] = useState(0)
+  const [error, setError] = useState(false)
   console.log(items)
 
   const handleSsdChange = (e) => {
@@ -17,9 +19,12 @@ const Capacity = ({capacityType}) => {
   useEffect(() => {
     axios.get(`http://localhost:3030/${capacityType}`)
     .then(res => setItems(res.data))
-    .catch(err => console.log(err))
+    .catch(err => setError('Error'))
   }, [capacityType])
   
+  if(error) {
+    return <AlertNotification/>
+  }
 
   return (
     <div>{capacityType === 'ram' ? 
