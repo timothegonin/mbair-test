@@ -1,6 +1,6 @@
 import { rest } from "msw"
 import { server } from "../../mocks/server"
-import { render, screen, waitFor } from "@testing-library/react"
+import { render, screen, waitFor } from "../../test-utils"
 import Configuration from "../Configuration"
 import MacBookProviders from "../../providers/MacBookProviders"
 
