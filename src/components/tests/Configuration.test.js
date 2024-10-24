@@ -43,4 +43,7 @@ test('Updating price and displaying product information based on selected capaci
   await user.selectOptions(selectElement, "230")
   expect(selectElement.value).toBe('230')
   expect(screen.getByRole("option", {name: /16 Go de mémoire unifiée/i, exact: false}).selected).toBe(true)
+
+  //checking production price update
+  expect(productPrice).toHaveTextContent("1429,00")
 })
