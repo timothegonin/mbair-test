@@ -4,6 +4,7 @@ import RamCapacities from './RamCapacities'
 import axios from 'axios'
 import SsdCapacities from './SsdCapacities'
 import AlertNotification from './AlertNotification'
+import useAndCheckMacBookDetails from '../providers/useAndCheckMacBookDetails'
 
 const Capacity = ({capacityType}) => {
 
@@ -11,6 +12,8 @@ const Capacity = ({capacityType}) => {
   const [ssd, setSsd] = useState(0)
   const [error, setError] = useState(false)
   console.log(items)
+
+  const {handleRamChange} = useAndCheckMacBookDetails()
 
   const handleSsdChange = (e) => {
     setSsd(+e.target.value)
@@ -29,7 +32,7 @@ const Capacity = ({capacityType}) => {
   return (
     <div>{capacityType === 'ram' ? 
       (<CapacityWrapper capacityType={capacityType}>
-        <select className='form-select form-select-outline w-50' aria-label='Default select' onChange={(() => {})}>
+        <select className='form-select form-select-outline w-50' aria-label='Default select' onChange={handleRamChange}>
           {
             items.map(capacity => {
               return (

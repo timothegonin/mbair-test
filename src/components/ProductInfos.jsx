@@ -3,7 +3,7 @@ import macbookAir from '../images/macbook-air.jpeg'
 import useAndCheckMacBookDetails from '../providers/useAndCheckMacBookDetails'
 
 const ProductInfos = () => {
-  const {productInfos} = useAndCheckMacBookDetails()
+  const {subTotal,productInfos} = useAndCheckMacBookDetails()
   return (
     <>
       <div className="col-md-6 mt-3">
@@ -17,7 +17,7 @@ const ProductInfos = () => {
             />
           </div>
           <h5 className='mt-4'>MacBook Air - Gris sidéral</h5>
-          <h4 className='green'>1199,00 €</h4>
+          <h4 className='green'>{subTotal} €</h4>
         </div>
       </div>
       <div className="col-md-6 mt-3">
