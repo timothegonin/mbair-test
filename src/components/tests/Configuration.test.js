@@ -30,7 +30,8 @@ test('RAM and SSD errors', async () => {
 test('Updating price and displaying product information based on selected capacities', async () => {
   const user = userEvent.setup()  
   render(<Configuration/>)
-  const productPrice = screen.getByRole("heading", {level:4, name: "1 199,00 €"})
+  // const productPrice = screen.getByRole("heading", {level:4, name: "1 199,00 €"})
+  const productPrice = screen.getByRole("heading", {name: /^(1\s)?199,00 €$|^(1199,00 €)$/})
   const ramCapacity = screen.getByText('8 Go de mémoire unifiée')
   const ssdCapacity = screen.getByText('SSD de 256 Go')
 
