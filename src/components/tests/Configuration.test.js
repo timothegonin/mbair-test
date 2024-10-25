@@ -30,7 +30,7 @@ test('RAM and SSD errors', async () => {
 test('Updating price and displaying product information based on selected capacities', async () => {
   const user = userEvent.setup()  
   render(<Configuration/>)
-  const productPrice = screen.getByRole("heading", {level:4, name: "1199,00 €"})
+  const productPrice = screen.getByRole("heading", {level:4, name: "1 199,00 €"})
   const ramCapacity = screen.getByText('8 Go de mémoire unifiée')
   const ssdCapacity = screen.getByText('SSD de 256 Go')
 
@@ -45,5 +45,5 @@ test('Updating price and displaying product information based on selected capaci
   expect(screen.getByRole("option", {name: /16 Go de mémoire unifiée/i, exact: false}).selected).toBe(true)
 
   //checking production price update
-  expect(productPrice).toHaveTextContent("1429,00")
+  expect(productPrice).toHaveTextContent("1 429,00")
 })
