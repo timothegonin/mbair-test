@@ -47,4 +47,7 @@ test('Updating price and displaying product information based on selected capaci
 
   //checking production price update
   expect(productPrice).toHaveTextContent("1 429,00")
+
+  //checkinf Ram infos changes
+  expect(ramCapacity).toHaveTextContent("16 Go de mémoire unifiée")
 })

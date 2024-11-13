@@ -15,8 +15,12 @@ const MacBookProviders = (props) => {
 
   const handleRamChange = (event) => {
     const ramCapacity = parseInt(event.target.value)
+    const ramOption = event.target.options[event.target.selectedIndex].text
+    const ramQuantity = ramOption.substring(0, ramOption.indexOf("Go") + 2)
+
     setProductInfos((prevState) => ({
       ...prevState,
+      capacityRam: ramQuantity,
       ram: ramCapacity
     }))
   }
