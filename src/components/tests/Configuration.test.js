@@ -50,4 +50,10 @@ test('Updating price and displaying product information based on selected capaci
 
   //checkinf Ram infos changes
   expect(ramCapacity).toHaveTextContent("16 Go de mémoire unifiée")
+
+  //chechink "512 go SSD" is checked
+  const inputSsd512 = await screen.findByLabelText('SSD de 512 Go', {exact: false})
+  expect(inputSsd512).toBeInTheDocument()
+  await user.click(inputSsd512)
+  expect(inputSsd512).toBeChecked()
 })
