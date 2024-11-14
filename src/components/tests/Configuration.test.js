@@ -56,4 +56,7 @@ test('Updating price and displaying product information based on selected capaci
   expect(inputSsd512).toBeInTheDocument()
   await user.click(inputSsd512)
   expect(inputSsd512).toBeChecked()
+
+  //price update after changing ssd
+  expect(productPrice).toHaveTextContent('1 659,00')
 })

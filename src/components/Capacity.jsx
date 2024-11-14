@@ -9,15 +9,10 @@ import useAndCheckMacBookDetails from '../providers/useAndCheckMacBookDetails'
 const Capacity = ({capacityType}) => {
 
   const [items, setItems] = useState([])
-  const [ssd, setSsd] = useState(0)
   const [error, setError] = useState(false)
   console.log(items)
 
-  const {handleRamChange} = useAndCheckMacBookDetails()
-
-  const handleSsdChange = (e) => {
-    setSsd(+e.target.value)
-  }
+  const {handleRamChange, handleSsdChange, productInfos} = useAndCheckMacBookDetails()
 
   useEffect(() => {
     axios.get(`http://localhost:3030/${capacityType}`)
@@ -46,7 +41,7 @@ const Capacity = ({capacityType}) => {
         {
           items.map(capacity => {
             return ( 
-            <SsdCapacities key={capacity.id} id={capacity.id} label={capacity.label} price={capacity.price} selectedSsd={ssd} handleSsdChangeFunc={handleSsdChange}/>
+            <SsdCapacities key={capacity.id} id={capacity.id} label={capacity.label} price={capacity.price} selectedSsd={productInfos.inputSsd} handleSsdChangeFunc={handleSsdChange}/>
           )})
         }
       </CapacityWrapper>) 
