@@ -59,4 +59,7 @@ test('Updating price and displaying product information based on selected capaci
 
   //price update after changing ssd
   expect(productPrice).toHaveTextContent('1 659,00')
+
+  //SSD changes in product infos
+  expect(ssdCapacity).toHaveTextContent('SSD de 512 Go')
 })

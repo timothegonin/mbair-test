@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { formatSsdString } from "../utilities"
 import { MacBookContext } from './context' 
 
 
@@ -29,8 +30,11 @@ const MacBookProviders = (props) => {
 
   const handleSsdChange = (event) => {
     const ssdCapacity = parseInt(event.target.value)
+    const ssdId = event.target.id
+    const formatedSsdString = formatSsdString(ssdId)
     setProductInfos((prevState) => ({
       ...prevState,
+      capacitySsd: formatedSsdString,
       ssd: ssdCapacity,
       inputSsd: ssdCapacity
     }))
