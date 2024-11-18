@@ -62,4 +62,11 @@ test('Updating price and displaying product information based on selected capaci
 
   //SSD changes in product infos
   expect(ssdCapacity).toHaveTextContent('SSD de 512 Go')
+
+  //change 16go to 8go
+  await user.selectOptions(selectElement, "0")
+  expect(selectElement.value).toBe("0")
+  expect(screen.getByRole("option", {name: /8 go de mémoire unifiée/i}).selected).toBe(true)
+  expect(productPrice).toHaveTextContent('1 429,00')
+  expect(ramCapacity).toHaveTextContent("8 Go de mémoire unifiée")
 })
