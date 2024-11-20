@@ -3,13 +3,13 @@ import ProductInfos from './ProductInfos'
 import Capacity from './Capacity'
 import Validation from './Validation'
 
-const Configuration = () => {
+const Configuration = ({setStep}) => {
   return (
     <>
       <ProductInfos/>
       <Capacity capacityType='ram'/>
       <Capacity capacityType='ssd'/>
-      <Validation/>
+      <Validation setStep={setStep} nextLevel="confirmationStep" />
     </>
   )
 }

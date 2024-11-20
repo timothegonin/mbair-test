@@ -1,6 +1,10 @@
 import React from 'react'
 
-const Validation = () => {
+const Validation = ({setStep,nextLevel}) => {
+  const handleNextStep = () => {
+    setStep(nextLevel)
+  }
+
   return (
     <div className='col-sm-12 mt-3 d-flex'>
       <div className='ms-auto' style={{borderRadius: "14px"}}>
@@ -9,7 +13,7 @@ const Validation = () => {
           value="Valider" 
           className='btn mt-2 btn-success' 
           style={{borderRadius: "7px", width:"200px"}}
-          onClick={()=>{}}
+          onClick={handleNextStep}
         />
       </div>
     </div>
