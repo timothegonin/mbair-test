@@ -10,7 +10,7 @@ const Validation = ({setStep,nextLevel}) => {
       <div className='ms-auto' style={{borderRadius: "14px"}}>
         <input 
           type="button" 
-          value="Valider" 
+          value={nextLevel=== "confirmationStep" ? 'Valider' : "Ajouter au panier"} 
           className='btn mt-2 btn-success' 
           style={{borderRadius: "7px", width:"200px"}}
           onClick={handleNextStep}

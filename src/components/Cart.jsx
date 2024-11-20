@@ -2,7 +2,9 @@ import React from 'react'
 
 const Cart = () => {
   return (
-    <div>Cart</div>
+    <div className="bg-white p-3 d-flex flex-column" style={{borderRadius: "14px"}}>
+      <h4 className="text-center">Panier</h4>
+    </div>
   )
 }
 

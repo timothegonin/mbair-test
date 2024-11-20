@@ -1,8 +1,9 @@
 import React from 'react'
 import useAndCheckMacBookDetails from '../providers/useAndCheckMacBookDetails'
 import {formatPrice} from '../utilities'
+import Validation from "./Validation"
 
-const Confirmation = () => {
+const Confirmation = ({setStep}) => {
   const {subTotal,productInfos} = useAndCheckMacBookDetails()
 
   return (
@@ -22,6 +23,7 @@ const Confirmation = () => {
           <span className='green'>{`${formatPrice(subTotal)} €`}</span>
         </h4>
       </div>
+      <Validation setStep={setStep} nextLevel="cartStep"/>
     </>
   )
 }
