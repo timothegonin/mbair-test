@@ -5,12 +5,19 @@ const Validation = ({setStep,nextLevel}) => {
     setStep(nextLevel)
   }
 
+  let buttonValue;
+  if(nextLevel === "confirmationStep") {
+    buttonValue = "Valider"
+  } else if(nextLevel === "cartStep"){
+    buttonValue = "Ajouter au Panier"
+  }
+
   return (
     <div className='col-sm-12 mt-3 d-flex'>
       <div className='ms-auto' style={{borderRadius: "14px"}}>
         <input 
           type="button" 
-          value={nextLevel=== "confirmationStep" ? 'Valider' : "Ajouter au panier"} 
+          value={buttonValue} 
           className='btn mt-2 btn-success' 
           style={{borderRadius: "7px", width:"200px"}}
           onClick={handleNextStep}
