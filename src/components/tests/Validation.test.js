@@ -21,7 +21,12 @@ describe('Validaiton component', () => {
     await user.click(buttonConfirmation)
     expect(gotToConfirmationStep).toHaveBeenCalledTimes(1)
   })
-  // test('Setter "setStep" used for cart', () => {
-
-  // })
+  test('Setter "setStep" used for cart', async() => {
+    const user = userEvent.setup()
+    const gotToCartStep = jest.fn()
+    render(<Validation setStep={gotToCartStep} nextLevel="cartStep"/>)
+    const buttonCart = screen.getByRole('button', {name: /ajouter au panier/i})
+    await user.click(buttonCart)
+    expect(gotToCartStep).toHaveBeenCalledTimes(1)
+  })
 })
